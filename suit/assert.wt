@@ -1,0 +1,15 @@
+/// Imports
+use std/rt for panic
+use std/convert as conv
+
+/// Represents `assert_eq` function
+pub fn assert_eq(a: dyn, b: dyn) {
+    if a != b =
+        panic("failed on `assert_eq` with: " <> conv.string(a) <> ", " <> conv.string(b))
+}
+
+/// Represents `assert_ne` function
+pub fn assert_ne(a: int, b: int) {
+    if a == b =
+        panic("failed on `assert_ne` with: " <> conv.string(a) <> ", " <> conv.string(b))
+}

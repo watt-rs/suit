@@ -1,0 +1,33 @@
+/// Imports
+use suit/test for Test
+use std/list for List
+use std/option for Option
+use std/option as option
+use std/io as io
+use std/convert as conv
+
+/// Runs tests
+pub fn run(tests: List) {
+    // Tests statistics
+    let successfull = 0;
+    let fault = 0;
+
+    // Running tests
+    let current = 0;
+    loop current < tests.len() {
+        let test: Test = option.unwrap(tests.get(current));
+        match test.run() {
+            Option.Some { value } -> {
+                fault += 1;
+                io.println("× error on " <> test.name <> ": " <> conv.string(value))
+            }
+            Option.None -> {
+                successfull += 1;
+            }
+        };
+        current += 1;
+    };
+
+    // Printing statistics
+    io.println("✓: " <> conv.string(successfull) <> ", ×: " <> conv.string(fault))
+}

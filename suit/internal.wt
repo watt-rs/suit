@@ -1,0 +1,12 @@
+/// Imports
+use std/option for Option
+
+/// Tries to execute function, catches any errors
+pub extern fn try(function: fn()): Option = `
+    try { 
+        function();
+        return Option.None();
+    } catch err {
+        return Option.Some(err);
+    }
+`

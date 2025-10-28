@@ -1,0 +1,20 @@
+/// Imports
+use suit/internal as internal
+use std/option for Option
+
+/// Represents `Test` type
+pub type Test(name: string, function: fn()) {
+    /// Test name
+    pub let name = name
+
+    /// Function to run
+    let function = function
+
+    /// Runs `Test`
+    pub fn run(): Option =
+        internal.try(self.function)
+
+    /// Gets function passed to the `Test`
+    pub fn get_function(): fn() =
+        self.function
+}
