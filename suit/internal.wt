@@ -6,7 +6,7 @@ pub extern fn try(function: fn()): Option = `
     try {
         function$();
         return Option.None();
-    } catch err {
+    } catch (err) {
         return Option.Some(err);
     }
 `
