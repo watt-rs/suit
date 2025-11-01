@@ -12,4 +12,4 @@ pub extern fn try(function: fn()): Option = `
 `
 
 /// Retrieves function name
-pub extern fn function_name(function: fn()): string = "return function.name;"
+pub extern fn function_name(function: fn()): string = "return function$.name;"
