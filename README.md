@@ -4,7 +4,7 @@
 # Example
 Simple example:
 
-```rust
+```gleam
 /// Imports
 use suit/test for Test
 use suit/run as test_runner
