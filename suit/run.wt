@@ -17,7 +17,7 @@ pub fn run(tests: List) {
     loop current < tests.len() {
         let test: Test = option.unwrap(tests.get(current));
         match test.run() {
-            Option.Some { value } -> {
+            Option.Some(value) -> {
                 fault += 1;
                 io.println("× error on " <> test.name <> ": " <> conv.string(value))
             }
