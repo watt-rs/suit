@@ -5,10 +5,10 @@ use std/option for Option
 /// Represents `Test` type
 pub type Test(function: fn()) {
     /// Test name
-    pub let name = internal.function_name(function)
+    pub name: string = internal.function_name(function)
 
     /// Function to run
-    let function = function
+    function: fn() = function
 
     /// Runs `Test`
     pub fn run(): Option =
